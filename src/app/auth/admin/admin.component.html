@@ -1,0 +1,32 @@
+<app-header></app-header>
+<form
+#postData="ngForm"
+(ngSubmit)="onSubmit()"
+[formGroup]="postForm"
+>
+<div class="d-flex justify-content-center input-group mt-5">
+  <textarea 
+    class="form-control custom-textarea" 
+    aria-label="With textarea"
+    formControlName="post"
+    placeholder="What's Trending?"
+    required
+  ></textarea>
+</div>
+<div class="d-flex justify-content-center mt-3">
+  <button 
+    type="submit"
+    class="btn btn-primary slick-btn">
+    Post
+  </button>
+</div>
+</form>
+<div class="d-flex justify-content-center  p-5 align-items-center mb-2">
+  <div class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center me-3" style="width: 50px; height: 50px;">
+    <img src="../../../assets/images/face.webp" alt="#" class="w-100 h-auto" />
+  </div>
+  <div *ngFor="let post of posts; let i = index" class="post-item">
+    <p class="mb-1 fw-bold">{{post.post}}</p>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->

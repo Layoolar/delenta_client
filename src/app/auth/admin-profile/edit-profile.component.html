@@ -1,0 +1,18 @@
+<h2 class="text-center mt-3">Edit Profile</h2>
+<div class="password-form">
+  <form
+    #profileData="ngForm"
+    (ngSubmit)="onSubmit()"
+    [formGroup]="profileForm"
+  >
+    <div class="password-input">
+        <input 
+         type="text"
+          name="firstName" 
+          formControlName="firstName"
+         placeholder="Edit first Name"
+        >
+      </div>
+      <button class="update-password" type="submit">Update Profile</button>
+  </form>
+</div>

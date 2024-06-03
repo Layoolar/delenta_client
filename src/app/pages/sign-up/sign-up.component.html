@@ -1,0 +1,89 @@
+<div class="signin">
+    <div class="signin__web-page">
+      <div class="signin__left-view">
+      </div>
+  
+      <div class="signin__right-view">
+        <div class="signin__form m-3 p-2">
+          <h2 class="signin__heading-primary">Sign Up</h2>
+          <span class="signin__heading-span">Sign up as an admin</span>
+          <form
+            action=""
+            #formData="ngForm"
+            (ngSubmit)="onSubmit()"
+            [formGroup]="signUpForm"
+          >
+            <div class="error-field">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="signin__input"
+                  placeholder="Username"
+                  formControlName="userName"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div class="error-field">
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="signin__input"
+                  placeholder="Email"
+                  formControlName="email"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div class="error-field">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="signin__input"
+                  placeholder="First Name"
+                  formControlName="firstName"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div class="error-field">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="signin__input"
+                  placeholder="Last Name"
+                  formControlName="lastName"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div class="error-field">
+              <div class="mb-3">
+                <input
+                  [type]="visible ? 'password' : 'text'"
+                  class="signin__input"
+                  placeholder="Password"
+                  formControlName="password"
+                  required
+                />
+              </div>
+            </div>
+            <div class="signin__method mt-3">
+              <button type="submit" class="signin__btn">Sign Up</button>
+            </div>
+          </form>
+          <div class="mt-3">
+            <p>
+              Already have an account?
+              <a [routerLink]="['/login']">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   

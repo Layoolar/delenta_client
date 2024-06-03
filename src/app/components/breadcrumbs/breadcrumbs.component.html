@@ -1,0 +1,10 @@
+<div class="container">
+    <span *ngFor="let title of crumbs; index as i; last as z">
+        <span *ngFor="let item of title | keyvalue">
+            <span routerLink="{{ item.value }}" [ngClass]="i == 0 ? 'poppins-bold' : ''">
+                {{ item.key }}
+            </span>
+            <span *ngIf="!z"> >> </span>
+        </span>
+    </span>
+</div>

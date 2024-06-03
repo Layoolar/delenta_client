@@ -1,0 +1,53 @@
+<div class="signin">
+    <div class="signin__web-page">
+      <div class="signin__left-view">
+      </div>
+
+    <div class="signin__right-view">
+      <div class="signin__form">
+        <h1 class="signin__heading-primary">
+          Verify your email
+          <br class="hidden-xs" />
+          <span class="signin__heading-span-text">
+            Please confirm your email address below and we 
+            will send you a verification code. 
+          </span>
+          <form
+           action=""
+           #formData="ngForm"
+           (ngSubmit)="onVerifyPassword()"
+           [formGroup]="verifyForm"
+          >
+            <div class="mt-4">
+              <input
+              type="email"
+              class="signin__input"
+              placeholder="Enter email"
+              name="email"
+              formControlName="email"
+              required
+            />
+            </div>
+            <div class="mt-4">
+              <input
+              type="text"
+              class="signin__input"
+              placeholder="Enter code"
+              name="otp"
+              formControlName="otp"
+              required
+            />
+            </div>
+          <div class="signin__method mt-5">
+            <button 
+             type="submit" 
+             class="signin__btn">
+             Submit
+          </button>
+          </div>
+          </form>
+        </h1>
+      </div>
+    </div>
+    </div>
+  </div>

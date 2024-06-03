@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <a  [routerLink]="['/blog']" class="link--d text-start text-white d-block text-decoration-none mb-4">
+        &larr; Back to Delenta Blog
+      </a>
+      <!-- <img src="assets/profile-picture.jpg" alt="Profile Picture" class="profile-picture"> -->
+      <h1 class="username">Profile</h1>
+      <p class="bio">This is the user's bio.</p>
+    </div>
+    <div class="profile-content">
+      <ul class="tabs">
+        <li
+          class="tab-link"
+          [class.current]="selectedTab === 'edit-username'"
+          (click)="selectTab('edit-username')"
+        >
+          Edit Username
+        </li>
+        <li
+          class="tab-link"
+          [class.current]="selectedTab === 'change-password'"
+          (click)="selectTab('change-password')"
+        >
+          Change Password
+        </li>
+      </ul>
+
+      <div *ngIf="selectedTab === 'edit-username'">
+       <app-edit-profile></app-edit-profile>
+      </div>
+          <div *ngIf="selectedTab === 'change-password'">
+        <app-change-password></app-change-password>
+      </div>
+    </div>
+  </div>
+</div>

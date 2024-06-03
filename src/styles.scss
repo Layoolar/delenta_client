@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import 'ngx-toastr/toastr'; 
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --primary-blue-light: #001D6D;
+    --primary-gray-light: #808082;
+    --primary-gray-secondary: #444444;
+    --prtimary-white-gray: #FCFCFC;
+    --ifm-container-width: 1140px;
+    --ifm-spacing-horizontal: 1rem;
+    --ifm-link-color: #0052cc;
+    --ifm-link-decoration: none;
+  }
+  
+  
+
+
+* {
+    font-family: 'Poppins';
+  }
+
+  /* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+
+
+  .ngx-pagination .current {
+    background: #8A6CC8 !important;
+  }
+  
+  .ngx-pagination .pagination-previous a:before,
+  .ngx-pagination .pagination-previous.disabled:before {
+    font-size: 19px;
+    color: #3c3c3c;
+  }
+  
+  
+  .ngx-pagination .pagination-next a:after,
+  .ngx-pagination .pagination-next.disabled:after {
+    font-size: 19px;
+    color: #3c3c3c;
+  }
+
+
+  .container {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 9.6rem;
+  
+    /* margin-bottom: 9.6rem; */
+}
+
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+}
+
+.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}

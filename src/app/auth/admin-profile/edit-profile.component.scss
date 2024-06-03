@@ -1,0 +1,59 @@
+.password-form {
+    text-align: center;
+  }
+  
+  .password-input {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .password-input label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #999;
+    transition: all 0.3s;
+  }
+  
+  .password-input input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    outline: none;
+  }
+  
+  .password-input input::placeholder {
+    color: #999;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .password-toggle:hover {
+    color: #0056b3;
+  }
+
+  .update-password {
+    width: 40%;
+    height: 43px;
+    border: none;
+    background-color: #007bff;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 500;
+  }

@@ -1,0 +1,100 @@
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 3rem;
+  }
+  
+  .profile-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .profile-header {
+    text-align: center;
+    padding: 30px 20px;
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .username {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .bio {
+    margin: 10px 0 0;
+    font-size: 14px;
+  }
+  
+  .profile-content {
+    padding: 20px;
+  }
+  
+  .tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tab-link {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .tab-link.current {
+    border-bottom: 2px solid #007bff;
+    color: #007bff;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.current {
+    display: block;
+  }
+  
+  .profile-form, .password-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-form label, .password-form label {
+    margin: 10px 0 5px;
+  }
+  
+  .profile-form input, .password-form input, .profile-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
