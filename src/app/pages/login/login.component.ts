@@ -72,7 +72,6 @@ export class LoginComponent implements OnInit {
           if (result.data) {
             this.authService.storeToken(result.data.token);
             this.user = result.data.user;
-              console.log(this.user);
             this.toastr.success("Logged In Successfully!!", result.data.user.userName);
             this.router.navigate(['/blog']);
           } else {

@@ -45,7 +45,6 @@ export class PostService {
 
  deletePost(userId: string): Observable<any> {
     const url = `${environment.apiUrl}/post/${userId}`;
-    console.log(url);
     return this.http.delete(url, { headers: this.getHeaders() })
       .pipe(catchError(this.errorHandler));
   }

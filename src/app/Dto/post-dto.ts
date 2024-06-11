@@ -2,6 +2,8 @@ export class PostDto {
   id: string | null;
   userId: string | null;
   post: string | null;
+  username? : string | null
+  userDetails: any
 }
 
 export class PostUserDto {

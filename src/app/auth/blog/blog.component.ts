@@ -29,6 +29,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./blog.component.scss']  // Corrected from styleUrl to styleUrls
 })
 export class BlogComponent implements OnInit {
+  token: any
   isLoggedIn: boolean = false;
   isAdmin: boolean = false;
   content: BoxContent | undefined;
@@ -62,7 +63,7 @@ export class BlogComponent implements OnInit {
   ) {
     let token: any = this.authService.getToken();
     this.currentUser = this.authService.getUserInfo(token);
-    console.log(this.currentUser);
+   
     this.postForm = new FormGroup({
       post: new FormControl(null, [Validators.required])
     });
@@ -72,9 +73,12 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.token = this.authService.getToken()
     this.getAllPost();
-    this.getUserById();
     this.isAdmin  = this.authService.isAdmin();
+    if(this.token) {
+      this.getUserById(this.currentUser.userId);
+    }
   }
 
   get f() {
@@ -128,10 +132,15 @@ export class BlogComponent implements OnInit {
           if (data && data.data && Array.isArray(data.data.posts)) {
             if (data.data.posts.length > 0) {
               this.totalLength = data.data.posts.length;
-              console.log(data);
-              this.posts = data.data.posts.map((res: any) => {
+            
+              this.posts = data.data.posts.map((res: PostDto) => {
+                let name = {userName: "Anonymous"};
+                if (res.userDetails && res.userDetails[0]) {
+                  name = res.userDetails[0]
+                }
                 const post = new PostDto();
-                post.post = res.post; // Assuming `post` is the correct property
+                post.post = res.post;
+                post.username = name.userName; // Assuming `post` is the correct property
                 // Map other necessary properties here if needed
     
                 return post;
@@ -154,14 +163,13 @@ export class BlogComponent implements OnInit {
       });
     }
     
-    getUserById() {
-      this.postService.getPostById(this.currentUser.userId).subscribe((res: any) => {
+    getUserById(user: string) {
+      this.postService.getPostById(user).subscribe((res: any) => {
         this.singleUserDetails = res.data; 
       });
     }
 
   deletePost() {
-    console.log(this.currentUser.userId);
     this.postService.deletePost(this.currentUser.userId).subscribe(
       () => {
         this.toastr.success('Post deleted successfully');

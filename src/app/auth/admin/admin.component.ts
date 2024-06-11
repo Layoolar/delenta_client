@@ -93,7 +93,7 @@ export class AdminComponent implements OnInit {
             this.isLoading = false;
             if (result.data) {
               this.toastr.success("Post created successfully");
-              console.log(result.data);
+            
               // Optionally, you can refresh comments after posting a new one
               this.getAllComments();
             } else {
@@ -149,47 +149,13 @@ export class AdminComponent implements OnInit {
       });
     }
 
-// getUsernameComment() {
-//   this.isLoading = true;
-//   this.postService.getCommentByUserName().subscribe({
-//     next: (data) => {
-//       this.isLoading = false;
-//       if (data && data.data && Array.isArray(data.data.comments)) {
-//         if (data.data.comments.length > 0) {
-//           this.totalLength = data.data.comments.length;
-//           this.comments = data.data.comments.map((res: any) => { // Map `comments` instead of `posts`
-//             const comment = new UserInfo();
-//             console.log(data);  
-//             comment.userName = res.userName; // Assuming `userName` is the correct property in each comment object
-//             // Map other necessary properties here if needed
-    
-//             return comment;
-//           });
-//         } else {
-//           // Handle case where there are no comments
-//           this.comments = [];
-//         }
-//       } else {
-//         // Handle case where `data.data.comments` is not an array
-//         this.toastr.error('Unexpected API response structure', data);
-//         this.comments = [];
-//       }
-//     },
-//     error: (err) => {
-//       this.isLoading = false;
-//       this.toastr.error('Error fetching comments:', err);
-//     }
-//   });
-// }
-
-
   deletePost(index: number): void {
     const postId = this.posts[index].id; // Assuming each post has an 'id' property
 
     if (postId) {
       this.postService.deletePost(postId).subscribe(
         response => {
-          console.log('Post deleted:', response);
+    
           // Remove the post from the local array
           this.posts.splice(index, 1);
         },

@@ -27,10 +27,9 @@ export class AuthService {
   }
 
   forgotPassword(): Observable<any> {
-    const email = 'karoprosper41@gmail.com';
+    const email = 'olaiwolaayoola@gmail.com';
 
     const url = `${environment.apiUrl}/account/forgot-password/${email}`;
-    console.log(url);
 
     return this.http.post(url, {headers: this.getHeaders()});
  }
@@ -38,7 +37,7 @@ export class AuthService {
   banUser(userId: string): Observable<any> {
     const body = { data: userId }
     const url = `${environment.apiUrl}/admin/account/ban/${userId}`;
-    console.log(url);
+
 
     return this.http.post(url, {body}, {headers: this.getHeaders()});
   }
@@ -68,7 +67,6 @@ export class AuthService {
 
   storeToken(tokenValue: string) {
     localStorage.setItem('authToken', tokenValue);
-    console.log(tokenValue);
   }
 
   getToken() {

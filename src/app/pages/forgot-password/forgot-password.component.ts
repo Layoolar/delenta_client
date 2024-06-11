@@ -31,7 +31,6 @@ export class ForgotPasswordComponent {
       response => {
         this.toastr.success("Forgot Password email sent successfully");
         this.router.navigate(['/verification']);
-        console.log(response);
       },
       error => {
         this.toastr.error('Error sending forgot password email');

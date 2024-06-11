@@ -68,7 +68,6 @@ export class SignUpComponent {
     if (this.signUpForm.valid) {
       this.isLoading = true;
       const user = this.signUpForm.getRawValue();
-      console.log(user);
       this.authService.signUpUser(user).subscribe({
         next: (result) => {
           if (result.data) {
